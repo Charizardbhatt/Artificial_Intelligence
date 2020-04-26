@@ -1,11 +1,21 @@
-DIGITDATA_DIR = "data/digitdata"
+# DIGITDATA_DIR = "data/digitdata"
+DIGITDATA_DIR= "C:/Users/harsh/Documents/AIProject/Artificial_Intelligence-master/data/digitdata"
+FACE_DIR= "C:/Users/harsh/Documents/AIProject/Artificial_Intelligence-master/data/facedata"
 
-trainingFileName = DIGITDATA_DIR + "/trainingimages"
-trainingLabelFileName = DIGITDATA_DIR + "/traininglabels"
-testFileName = DIGITDATA_DIR + "/testimages"
-testLabelFileName = DIGITDATA_DIR + "/testlabels"
-validationFileName = DIGITDATA_DIR + "/validationimages"
-validationLabelFileName = DIGITDATA_DIR + "/validationlabels"
+
+# trainingFileName = DIGITDATA_DIR + "/trainingimages"
+# trainingLabelFileName = DIGITDATA_DIR + "/traininglabels"
+# testFileName = DIGITDATA_DIR + "/testimages"
+# testLabelFileName = DIGITDATA_DIR + "/testlabels"
+# validationFileName = DIGITDATA_DIR + "/validationimages"
+# validationLabelFileName = DIGITDATA_DIR + "/validationlabels"
+
+trainingFileName = FACE_DIR + "/trainingimages"
+trainingLabelFileName = FACE_DIR + "/traininglabels"
+testFileName = FACE_DIR + "/testimages"
+testLabelFileName = FACE_DIR + "/testlabels"
+validationFileName = FACE_DIR + "/validationimages"
+validationLabelFileName = FACE_DIR + "/validationlabels"
 
 TEST = "TEST"
 TRAIN = "TRAIN"

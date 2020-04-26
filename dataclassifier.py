@@ -8,7 +8,8 @@ from samples import Samples
 
 
 class DataClassifier:
-    def __init__(self, imgHeight=20, imgWidth=29, LABELS=10, pixelChars=None):
+    # def __init__(self, imgHeight=20, imgWidth=29, LABELS=10, pixelChars=None):
+    def __init__(self, imgHeight=68, imgWidth=61, LABELS=2, pixelChars=None):
         if pixelChars is None:
             pixelChars = ['#', '+']
         self.pixelGrid = 1
@@ -136,5 +137,3 @@ if __name__ == '__main__':
 
     print(PERCEPTRON_TIME)
     samples.closeFiles()
-
-
