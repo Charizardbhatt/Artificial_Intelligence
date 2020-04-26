@@ -8,7 +8,7 @@ from samples import Samples
 
 
 class DataClassifier:
-    def __init__(self, imgHeight=20, imgWidth=29, LABELS=10, pixelChars=None):
+    def __init__(self, imgHeight, imgWidth, LABELS, pixelChars):
         if pixelChars is None:
             pixelChars = ['#', '+']
         self.pixelGrid = 1
@@ -79,13 +79,31 @@ class DataClassifier:
 
         return featureValueListForAllTestingImages, actualLabelList
 
+FACE = "FACE"
+DIGIT = "DIGIT"
+DIR = "DIR"
+HEIGHT = "HEIGHT"
+WIDTH = "WIDTH"
+LABEL= "LABEL"
+PIXELS="PIXELS"
 
 if __name__ == '__main__':
     print("TRAINING OUR MODEL FIRST")
     PERCENT_INCREMENT = 10
+    inp = input("Type FACE or DIGIT")
 
-    samples = Samples()
-    dataClassifier = DataClassifier()
+    map = {
+        FACE: {
+            DIR: 'data/facedata', HEIGHT: 68, WIDTH: 61, LABEL: 2, PIXELS: None
+        },
+        DIGIT:{
+            DIR: 'data/digitdata', HEIGHT: 20, WIDTH: 29, LABEL: 10, PIXELS: None
+        }
+    }
+
+    samples = Samples(map.get(inp).get(DIR))
+
+    dataClassifier = DataClassifier(map.get(inp).get(HEIGHT),map.get(inp).get(WIDTH),map.get(inp).get(LABEL),map.get(inp).get(PIXELS))
     perceptronClassifier = PerceptronClassifier(dataClassifier.FEATURES, dataClassifier.LABELS)
 
     samples.readFiles()
@@ -136,5 +154,3 @@ if __name__ == '__main__':
 
     print(PERCEPTRON_TIME)
     samples.closeFiles()
-
-
